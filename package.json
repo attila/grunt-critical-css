@@ -1,6 +1,6 @@
 {
   "name": "grunt-critical-css",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "Grunt task to extract Above the Fold CSS for a URL",
   "homepage": "https://github.com/attilab/grunt-critical-css",
   "author": "Attila Beregszaszi <attila@frontseed.com> (http://frontseed.com/)",

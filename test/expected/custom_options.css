@@ -1,0 +1,3 @@
+body { position: relative; }
+body.inline { background-color: rgb(255, 255, 255); }
+p:first-child { text-align: center; }

@@ -6,11 +6,8 @@
  * Licensed under the MIT license.
  */
 
-'use strict';
-
 module.exports = function(grunt) {
-  // Please see the Grunt documentation for more information regarding task
-  // creation: http://gruntjs.com/creating-tasks
+
   var criticalCss = require('critical-css');
 
   grunt.registerMultiTask('critical_css', 'Grunt task to extract Above the Fold CSS for a URL', function() {
@@ -20,8 +17,12 @@ module.exports = function(grunt) {
     if (!this.data.dest) {
       throw new TypeError('Missing dest parameter.');
     }
+    if (grunt.util.kindOf(this.data.url) !== 'string' && grunt.util.kindOf(this.data.url) !== 'array') {
+      throw new TypeError('url should be a string or an array.');
+    }
 
     var done = this.async();
+
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
       width: 1200,
@@ -52,16 +53,16 @@ module.exports = function(grunt) {
     function runBatch(i) {
       if (i < urls.length) {
         criticalCss.generate(urls[i], options, function(err, output) {
-      if (err) {
+          if (err) {
             grunt.log.error(urls[i]);
             grunt.fail.fatal(err.message);
-      }
+          }
           else {
             processStep(output, urls[i], i);
 
             runBatch(i + 1);
           }
-    });
+        });
       }
       else {
         finalise();

@@ -168,12 +168,8 @@ using [Grunt](http://gruntjs.com/).
 * 0.1.1 - Initial release
 
 
-## License
+## Development
 
-Copyright (c) 2015 Attila Beregszaszi
-Licensed under the MIT license.
+Project led and maintained by [Attila Beregszaszi](http://attilab.com/)
 
-## Plug
-
-Development was sponsored by [Front Seed Labs](http://frontseed.com/) and
-[Dennis Publishing](http://www.dennis.co.uk/)
+Development sponsored by [Dennis Publishing](http://www.dennis.co.uk/) and [Front Seed Labs](http://frontseed.com/)
